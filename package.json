@@ -1,0 +1,38 @@
+{
+  "name": "review",
+  "version": "1.0.0",
+  "description": "The review component should get user info from database and render to the dom.",
+  "main": "index.js",
+  "scripts": {
+    "react-dev": "webpack -d --watch",
+    "server-dev": "nodemon server/index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-munch/review.git"
+  },
+  "author": "Enkhbat Munkhbold",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/the-munch/review/issues"
+  },
+  "homepage": "https://github.com/the-munch/review#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.3",
+    "nodemon": "^1.19.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "jest": "^24.8.0",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5"
+  }
+}
