@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/reviews', { useNewUrlParser: true });
+
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => { 'Database is connected!'});
+db.once('open', () => { console.log('Database is connected!')});
 
-let userSchema = mongoose.Schema({
+let reviewSchema = mongoose.Schema({
     picture: {
         type: String,
         required: true
@@ -28,4 +29,9 @@ let userSchema = mongoose.Schema({
     elite: Boolean
   });
   
-  let User = mongoose.model('User', userSchema);
+  let Review = mongoose.model('Review', reviewSchema);
+  let save = ((err, review) => {
+    if(err) { console.error(err);}
+  })
+
+  module.exports.Review = Review;
