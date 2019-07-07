@@ -33,6 +33,4 @@ const createData = () => {
     }
 };
 
-
 createData();
-console.log('created review data')
