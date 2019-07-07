@@ -3,9 +3,11 @@ const _ = require('underscore');
 const Review = require('./reviews.js')
 const faker = require('faker');
 
+//random numbers for creating review model
 let randNum = Math.floor(Math.random() * (6 - 1) + 1);
 let ratingRandNum = Math.floor(Math.random() * 6);
 let eliteRand = Math.floor(Math.random() * 2);
+
 
 //Creating reviews for a given restaurant
 for(let i = 0; i < randNum; i++) {
