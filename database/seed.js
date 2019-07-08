@@ -22,7 +22,7 @@ const createData = () => {
             picture: `https://worldnet-sites.s3-us-west-1.amazonaws.com/images/${arrNums[i]}.jpg`,
             name: faker.name.findName(),
             location: faker.address.city() + '. ' + faker.address.state(),
-            reviews: revRandNum,
+            reviews: randNum,
             rating: ratingRandNum,
             elite: eliteRand
         }).then(() => {

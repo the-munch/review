@@ -27,4 +27,4 @@ let reviewSchema = mongoose.Schema({
   
   let Review = mongoose.model('Review', reviewSchema);
   
-  module.exports.Review = Review;
+  module.exports = Review;

@@ -5,8 +5,8 @@ const Review = require('../database/index.js');
 let app = express();
 const port = 3000;
 
-app.use(express.static(__dirname + '/../client/dist'));
-app.use(bodyParser.text({type: 'json'}));
+// app.use(express.static(__dirname + '/../client/dist'));
+// app.use(bodyParser.text({type: 'json'}));
 
 // app.use('/review', (req, res, next) => {
 //     res.status(200).json({
@@ -23,7 +23,7 @@ app.use(bodyParser.text({type: 'json'}));
 
 app.get('/', (req, res, next) => {
     res.status(200).json({
-        message: 'GET reviews are created'
+        res
     });
 });
 
