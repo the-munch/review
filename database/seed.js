@@ -1,5 +1,3 @@
-// const db = require('./index.js');
-const _ = require('underscore');
 const Review = require('./reviews.js')
 const faker = require('faker');
 
