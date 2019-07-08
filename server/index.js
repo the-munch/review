@@ -23,7 +23,7 @@ const port = 3000;
 
 app.get('/', (req, res, next) => {
     res.status(200).json({
-        message: 'GET reviews are created'
+        res
     });
 });
 
