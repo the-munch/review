@@ -1,24 +1,3 @@
-import React from 'react';
-//unit test using jest and enzym
-class App extends React.Component {
-    constructor(props) {
-        super(props);
+import App from './components/app.jsx';
 
-    }
-
-    render() {
-        return (
-            <li>
-                <div class="js-war-widget review review--with-sidebar" data-component-bound="true">
-                    <div class="review-sidebar-content">
-                        <div>
-                            <div class class="media-avatar responsive-photo-box">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        )
-    }
-}
+ReactDOM.render(<App />, document.getElementsByClassName('ylist ylist-bordered reviews'))

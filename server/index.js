@@ -7,7 +7,7 @@ let app = express();
 const port = 3000;
 
 
-// app.use(express.static(__dirname + '/../client/dist'));
+app.use(express.static(__dirname + '/../client/dist'));
 app.use(bodyParser.text({type: 'json'}));
 
 app.get('/reviews', (req, res) => {
@@ -15,7 +15,8 @@ app.get('/reviews', (req, res) => {
         if(err) {
             console.error(err);
         }
-        console.log(Review);
+        // console.log(Review);
+        res.send(Review);
     })
 });
 
