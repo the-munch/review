@@ -13,10 +13,10 @@ app.use(bodyParser.text({type: 'json'}));
 app.get('/reviews', (req, res) => {
     Review.find(function(err, Review) {
         if(err) {
-            console.error(err);
+            res.status(500).send(err);
         }
         // console.log(Review);
-        res.send(Review);
+        res.status(200).send(Review);
     })
 });
 
