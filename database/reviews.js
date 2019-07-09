@@ -1,4 +1,3 @@
-// const db = require('./index.js');
 const mongoose = require('mongoose');
 
 let reviewSchema = mongoose.Schema({
