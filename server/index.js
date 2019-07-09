@@ -1,39 +1,22 @@
 const express = require('express');
+const db = require('../database/index.js');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const morgan = require('morgan');
-const Review = require('../database/index.js');
+const Review = require('../database/reviews.js');
 let app = express();
 const port = 3000;
 
+
 // app.use(express.static(__dirname + '/../client/dist'));
-// app.use(bodyParser.text({type: 'json'}));
+app.use(bodyParser.text({type: 'json'}));
 
-// app.use('/review', (req, res, next) => {
-//     res.status(200).json({
-//         message: 'Handling GET requests to /reviews!'
-//     });
-// });
-
-// app.post('/reviews', (req, res) => {
-//     // let userReview = JSON.parse(req.body);
-//     res.status(200).json({
-//         message: 'Handling POST requests to /reviews!'
-//     });
-// })
-
-app.get('/', (req, res, next) => {
-    res.status(200).json({
-        res
-    });
+app.get('/reviews', (req, res) => {
+    Review.find(function(err, Review) {
+        if(err) {
+            console.error(err);
+        }
+        console.log(Review);
+    })
 });
-
-app.post('/', (req, res, next) => {
-    res.status(201).json({
-        message: 'POST reviews are created'
-    });
-});
-
-app.put('/review', (req, res) => res.send('Got a PUT request at /review'));
-app.delete('/review', (req, res) => res.send('Got a DELETE request'));
 
 app.listen(port, () => console.log(`Server is listening on ${port}...`));
