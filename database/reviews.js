@@ -1,4 +1,3 @@
-const db = require('./index.js');
 const mongoose = require('mongoose');
 
 let reviewSchema = mongoose.Schema({
@@ -26,5 +25,6 @@ let reviewSchema = mongoose.Schema({
   });
   
   let Review = mongoose.model('Review', reviewSchema);
+  
   
   module.exports = Review;

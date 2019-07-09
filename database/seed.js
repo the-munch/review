@@ -1,5 +1,6 @@
 const Review = require('./reviews.js')
 const faker = require('faker');
+const db = require('./index.js');
 
 let randNumOfReviews = () => { return Math.floor(Math.random() * (6 - 1) + 1) };
 let randomChoice = () => { return Math.floor(Math.random() * 6) };
@@ -25,9 +26,9 @@ const createData = () => {
             rating: randomChoice(),
             elite: Math.floor(Math.random() * 2)
         }).then(() => {
-            console.log(Review);
+            db.close();
         }).catch((err) => {
-            console.error(err);
+            db.close();
         });
     }
 };
