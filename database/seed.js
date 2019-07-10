@@ -1,30 +1,36 @@
 const Review = require('./reviews.js')
 const faker = require('faker');
 const db = require('./index.js');
-
-let randNumOfReviews = () => { return Math.floor(Math.random() * (6 - 1) + 1) };
-let randomChoice = () => { return Math.floor(Math.random() * 6) };
+const Chance = require('chance');
 
 //Creating reviews for a given restaurant
 const createData = () => {
 
     let arrNums = [];
-    let length = randNumOfReviews();
-    for(let j = 0; j < length; j++) {
-        random = Math.floor(Math.random() * (50 - 1) + 1);
-        if(!arrNums.includes(random)){
-            arrNums.push(random);
-        }
-    }
+    let length = faker.random.number(5);
 
     for(let i = 0; i < length; i++) {
+        
+        let randNum= Math.floor(Math.random() * 100);
+        if(!arrNums.includes(randNum)){
+            arrNums.push(randNum);
+        }
+        
+        //create gender specific random names
+        let chance = new Chance();
+        let userName = '';
+        if(randNum % 2 === 0) {
+            userName = chance.name({ gender: 'female'});
+        } else {
+            userName = chance.name({ gender: 'male'});
+        }
         Review.create({
             picture: `https://worldnet-sites.s3-us-west-1.amazonaws.com/images/${arrNums[i]}.jpg`,
-            name: faker.name.findName(),
+            name: userName,
             location: faker.address.city() + '. ' + faker.address.state(),
-            reviews: randNumOfReviews(),
-            rating: randomChoice(),
-            elite: Math.floor(Math.random() * 2)
+            reviews: faker.random.number(100),
+            rating: faker.random.number(5),
+            elite: faker.random.number(1)
         }).then(() => {
             db.close();
         }).catch((err) => {

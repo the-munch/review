@@ -1,3 +1,7 @@
-import App from './components/app.jsx';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import UserInfo from './components/UserInfo.jsx';
 
-ReactDOM.render(<App />, document.getElementsByClassName('ylist ylist-bordered reviews'))
+
+ReactDOM.render(<UserInfo />, document.getElementById('review-list'));
+
