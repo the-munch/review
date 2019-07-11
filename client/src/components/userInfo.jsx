@@ -23,12 +23,14 @@ class UserInfo extends Component {
 
     render() {
         return  (
-            <ul className={style.review_list}>{ this.state.reviews.map(review => 
+            <div className={style.wrapper}>
+                <ul className={style.review_list}>{ this.state.reviews.map(review => 
                 <li className="review" key={review._id}><img src={review.picture}/> 
                     <div className={style.title}><h4>{review.name}</h4></div>
                     <div className={style.location}><h5>{review.location}</h5></div>
                 </li>)}
             </ul>
+            </div>
         )
     }
 }

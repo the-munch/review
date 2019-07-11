@@ -24,10 +24,13 @@ const createData = () => {
         } else {
             userName = chance.name({ gender: 'male'});
         }
+
+        let firstAndLastNames = userName.split(' ');
+        let nameAndInitial = firstAndLastNames[0] + ' ' + firstAndLastNames[1][0] + '.';
         Review.create({
             picture: `https://worldnet-sites.s3-us-west-1.amazonaws.com/images/${arrNums[i]}.jpg`,
-            name: userName,
-            location: faker.address.city() + '. ' + faker.address.state(),
+            name: nameAndInitial,
+            location: faker.address.city() + ', ' + faker.address.stateAbbr(),
             reviews: faker.random.number(100),
             rating: faker.random.number(5),
             elite: faker.random.number(1)
