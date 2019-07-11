@@ -1,4 +1,19 @@
+.review_list {
+    list-style-type: none;
+    height: 90px;
+    width: 500px;
+}
+
+img {
+    height: 80px;
+    width: 80px;
+    border-radius: 5px;
+}
 
 .title {
-    color: #0073bb;
+    color: blue;
+}
+
+.location {
+    color: lightseagreen;
 }

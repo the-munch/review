@@ -3,5 +3,5 @@ import ReactDOM from 'react-dom';
 import UserInfo from './components/UserInfo.jsx';
 
 
-ReactDOM.render(<UserInfo />, document.getElementById('review-list'));
+ReactDOM.render(<UserInfo />, document.getElementById('review-container'));
 
