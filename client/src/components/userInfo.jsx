@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import style from '../styles/style.css';
 
 class UserInfo extends Component {
     constructor(props) {
@@ -22,10 +23,10 @@ class UserInfo extends Component {
 
     render() {
         return  (
-            <ul>{ this.state.reviews.map(review => 
-                <li key={review._id}><img src={review.picture} height="60px" width="50px"/> 
-                    <h4 className="user-name">{review.name}</h4>
-                    <h5>{review.location}</h5>
+            <ul className={style.review_list}>{ this.state.reviews.map(review => 
+                <li className="review" key={review._id}><img src={review.picture}/> 
+                    <div className={style.title}><h4>{review.name}</h4></div>
+                    <div className={style.location}><h5>{review.location}</h5></div>
                 </li>)}
             </ul>
         )
